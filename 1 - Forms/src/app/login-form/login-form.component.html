@@ -1,0 +1,77 @@
+<form [formGroup]="formGroup" class="center">
+  <label for="email"><span>*</span> Email: </label>
+
+  <input type="email" formControlName="email" />
+
+  <br />
+  <label for="password"><span>*</span> Password: </label>
+
+  <input type="password" formControlName="password" />
+
+  <br />
+
+  <label for="confirm"><span>*</span> Confirm Password: </label>
+  <input id="confirm" type="password" formControlName="confirm" />
+
+  <br />
+  <label for="text"><span>*</span> Nickname: </label>
+  <input type="text" formControlName="nickname" />
+
+  <br />
+  <label for="number"><span>*</span> Phone Number: </label>
+  <input id="number" formControlName="number" />
+
+  <br />
+  <label for="website"><span>*</span> Website: </label>
+  <input id="website" formControlName="website" />
+
+  <br />
+
+  <input
+    type="checkbox"
+    (change)="checkbox($event)"
+    formControlName="checkbox"
+  />
+  I have read the agreement
+
+  <br />
+
+  <button [disabled]="buttoner && formGroup.invalid" (click)="onClick()">
+    Submit
+  </button>
+</form>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Nickname</th>
+    <th>Phone Number</th>
+    <th>Website</th>
+    <th>Remove User</th>
+    <th>Update User</th>
+  </tr>
+  <tr *ngFor="let user of users; let index = index">
+    <td>
+      <span>{{ index }}</span>
+    </td>
+    <td>
+      <span>{{ user.email }}</span>
+    </td>
+    <td>
+      <span>{{ user.password }}</span>
+    </td>
+    <td>
+      <span>{{ user.nickname }}</span>
+    </td>
+    <td>
+      <span>{{ user.number }}</span>
+    </td>
+    <td>
+      <span>{{ user.website }}</span>
+    </td>
+    <td><button (click)="removeItem(user)">Remove user</button></td>
+    <td><button (click)="update(user)">Update User</button></td>
+  </tr>
+</table>
