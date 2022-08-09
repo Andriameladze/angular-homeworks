@@ -2,16 +2,43 @@
   <div class="inner-wrapper">
     <div class="center">
       <h2>Amount</h2>
-      <input type="number" placeholder="Input Amount 1" />
+
+      <!-- <ng-container *ngIf="input1 | async"> -->
+      <input
+        type="number"
+        placeholder="Input Amount 1"
+        [(ngModel)]="input1"
+        value="h"
+      />
+      <!-- </ng-container> -->
+
       <br />
-      <input type="number" placeholder="Input Amount 2" />
+
+      <!-- <ng-container *ngIf="input2 | async"> -->
+      <input type="number" placeholder="Input Amount 2" [(ngModel)]="input2" />
+      <!-- </ng-container> -->
     </div>
 
     <div class="center currency">
       <h2>Currency</h2>
-      <input type="text" placeholder="Choose Currency 1" />
+
+      <!-- <ng-container *ngIf="currency1 | async"> -->
+      <input
+        type="text"
+        placeholder="Select Currency 1"
+        [(ngModel)]="currency1"
+      />
+      <!-- </ng-container> -->
+
       <br />
-      <input type="text" placeholder="Choose Currency 2" />
+
+      <!-- <ng-container *ngIf="currency2 | async"> -->
+      <input
+        type="text"
+        placeholder="Select Currency 2"
+        [(ngModel)]="currency2"
+      />
+      <!-- </ng-container> -->
     </div>
   </div>
 </div>
