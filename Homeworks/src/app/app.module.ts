@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpComponent } from './http/http.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginFormComponent, HttpComponent],
+  declarations: [AppComponent, LoginFormComponent, HttpComponent, EmployeeFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
