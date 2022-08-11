@@ -1,0 +1,25 @@
+<h1 class="center">Employee Dashboard</h1>
+
+<h3 class="center">Please register a new employee</h3>
+
+<form [formGroup]="formGroup" class="center form">
+  <label for="name">Name: </label>
+
+  <input formControlName="name" id="name" />
+
+  <br />
+
+  <label for="salary">Salary: </label>
+
+  <input type="number" formControlName="salary" id="salary" />
+
+  <br />
+
+  <label for="age"> Age: </label>
+
+  <input type="number" formControlName="salary" id="age" />
+
+  <br />
+
+  <button>Register</button>
+</form>
