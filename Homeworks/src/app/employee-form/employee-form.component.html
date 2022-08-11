@@ -21,7 +21,9 @@
 
   <br />
 
-  <button [disabled]="formGroup.invalid" (click)="onClick()">Register</button>
+  <button [disabled]="formGroup.invalid" (click)="addEmployee()">
+    Register
+  </button>
 </form>
 
 <table>
@@ -33,24 +35,62 @@
   </tr>
 
   <tr *ngFor="let employee of employees; let index = index">
-    <td>
-      <span>{{ counter }}</span>
-    </td>
-    <td>
-      <span>{{ employee.name }}</span>
-    </td>
-    <td>
-      <span>{{ employee.salary }}</span>
-    </td>
-    <td>
-      <span>{{ employee.age }}</span>
-    </td>
+    <td>{{ employee.id }}</td>
+
+    <td>{{ employee.name }}</td>
+
+    <td>{{ employee.salary }}</td>
+
+    <td>{{ employee.age }}</td>
     <!-- <td>
       <span>{{ user.number }}</span>
     </td> -->
 
-    <!-- <td><button (click)="removeItem(user)">Remove user</button></td>
+    <td>
+      <button class="secondary-button" (click)="deleteEmployee(employee)">
+        Delete user
+      </button>
+    </td>
 
-    <td><button (click)="update(user)">Update User</button></td> -->
+    <td>
+      <button type="button" (click)="popup = true; updateEmployee(employee)">
+        Update
+      </button>
+
+      <div class="overlay" *ngIf="popup">
+        <div class="popup">
+          <h2>Update User</h2>
+          <a class="close" (click)="popup = false">&times;</a>
+          <form [formGroup]="formGroup" class="center">
+            <label for="name"><span>*</span>Name: </label>
+
+            <input formControlName="name" id="name" />
+
+            <br />
+
+            <label for="salary"><span>*</span>Salary: </label>
+
+            <input type="number" formControlName="salary" id="salary" />
+
+            <br />
+
+            <label for="age"> <span>*</span>Age: </label>
+
+            <input type="number" formControlName="age" id="age" />
+
+            <br />
+
+            <button [disabled]="formGroup.invalid" (click)="updateDetails()">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </td>
+    <!-- <td>
+      <button class="secondary-button" (click)="update(employee)">
+        Update User
+      </button>
+    </td> -->
   </tr>
 </table>
