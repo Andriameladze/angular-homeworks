@@ -31,4 +31,26 @@
     <th>Salary</th>
     <th>Age</th>
   </tr>
+
+  <tr *ngFor="let employee of employees; let index = index">
+    <td>
+      <span>{{ counter }}</span>
+    </td>
+    <td>
+      <span>{{ employee.name }}</span>
+    </td>
+    <td>
+      <span>{{ employee.salary }}</span>
+    </td>
+    <td>
+      <span>{{ employee.age }}</span>
+    </td>
+    <!-- <td>
+      <span>{{ user.number }}</span>
+    </td> -->
+
+    <!-- <td><button (click)="removeItem(user)">Remove user</button></td>
+
+    <td><button (click)="update(user)">Update User</button></td> -->
+  </tr>
 </table>
