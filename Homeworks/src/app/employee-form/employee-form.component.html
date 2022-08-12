@@ -34,7 +34,12 @@
     <th>Age</th>
   </tr>
 
-  <tr *ngFor="let employee of employees; let index = index">
+  <tr
+    *ngFor="
+      let employee of employees | paginate: { itemsPerPage: 5, currentPage: p };
+      let index = index
+    "
+  >
     <td>{{ employee.id }}</td>
 
     <td>{{ employee.name }}</td>
@@ -43,8 +48,8 @@
 
     <td>{{ employee.age }}</td>
     <!-- <td>
-      <span>{{ user.number }}</span>
-    </td> -->
+    <span>{{ user.number }}</span>
+  </td> -->
 
     <td>
       <button class="secondary-button" (click)="deleteEmployee(employee)">
@@ -98,3 +103,7 @@
     </td> -->
   </tr>
 </table>
+<pagination-controls
+  class="center"
+  (pageChange)="p = $event"
+></pagination-controls>

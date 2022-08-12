@@ -24,9 +24,14 @@ export class EmployeeFormComponent implements OnInit {
     private empService: EmpServiceService
   ) {}
 
+  nameRegex = /^[a-zA-Z\s]*$/;
+
   ngOnInit(): void {
     this.formGroup = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.nameRegex),
+      ]),
       salary: new FormControl('', Validators.required),
       age: new FormControl('', Validators.required),
     });
@@ -134,4 +139,7 @@ export class EmployeeFormComponent implements OnInit {
         console.log(this.employeeObj);
       });
   }
+
+  p: number = 1;
+  collection: any[] = [];
 }
