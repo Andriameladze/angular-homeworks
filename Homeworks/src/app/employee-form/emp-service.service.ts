@@ -9,19 +9,7 @@ import { map } from 'rxjs/operators';
 export class EmpServiceService {
   constructor(private http: HttpClient) {}
 
-  // employees: any = [];
-
   employeeUrl = 'http://localhost:3000/employees';
-
-  // postMethod(data: any) {
-  //   this.http.post(this.employeeUrl, data).subscribe();
-  // }
-
-  // getMethod() {
-  //   this.http.get(this.employeeUrl).subscribe();
-  // }
-
-  // VERSION 2
 
   postMethod(data: any) {
     return this.http.post(this.employeeUrl, data).pipe(

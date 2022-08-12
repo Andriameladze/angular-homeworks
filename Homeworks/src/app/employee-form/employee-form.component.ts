@@ -13,10 +13,6 @@ import { EmployeeObj } from './emp-obj.model';
 export class EmployeeFormComponent implements OnInit {
   formGroup: any;
 
-  // employees: any[] = [];
-
-  // employees = new BehaviorSubject(<any>[]);
-
   employeeUrl: string = 'http://localhost:3000/employees';
 
   constructor(
@@ -25,6 +21,7 @@ export class EmployeeFormComponent implements OnInit {
   ) {}
 
   nameRegex = /^[a-zA-Z\s]*$/;
+  ageRegex = /^[0-9]{0,2}$/;
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -33,56 +30,14 @@ export class EmployeeFormComponent implements OnInit {
         Validators.pattern(this.nameRegex),
       ]),
       salary: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
+      age: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.ageRegex),
+      ]),
     });
 
     this.getEmployees();
   }
-
-  counter = 1;
-
-  postId = '';
-
-  // VERSION 1
-
-  // public onClick() {
-  //   this.http
-  //     .post(this.employeeUrl, this.formGroup.value)
-  //     .subscribe((data) => this.employees.push(data));
-
-  //   this.formGroup.reset();
-
-  //   // console.log(this.http.post(this.employeeUrl, this.formGroup.value));
-
-  //   // this.http
-  //   //   .get(this.employeeUrl)
-  //   //   .subscribe((res) => this.employees.push(res));
-
-  //   // this.employees.push({
-  //   //   name: this.formGroup.get('name').value,
-  //   //   salary: this.formGroup.get('salary').value,
-  //   //   age: this.formGroup.get('age').value,
-  //   // });
-
-  //   // this.employees.push(
-  //   //   this.http
-  //   //     .get(this.employeeUrl)
-  //   //     .subscribe((res) => this.employees.push(res+"/" + ))
-  //   // );
-  //   // console.log(this.employees);
-
-  //   // this.counter++;
-  // }
-
-  // public update(arg: any) {
-  //   this.empService.getMethod();
-  // }
-
-  // public removeItem(arg: any) {
-  //   console.log('removed' + arg);
-  // }
-
-  // VERSION 2
 
   employeeObj: EmployeeObj = new EmployeeObj();
 

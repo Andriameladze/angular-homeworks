@@ -2,6 +2,8 @@
 
 <h3 class="center">Please register a new employee</h3>
 
+<!-- INPUT FORM -->
+
 <form [formGroup]="formGroup" class="center form">
   <label for="name"><span>*</span>Name: </label>
 
@@ -26,6 +28,8 @@
   </button>
 </form>
 
+<!-- EMPLOYEE LIST -->
+
 <table>
   <tr>
     <th>ID</th>
@@ -47,9 +51,6 @@
     <td>{{ employee.salary }}</td>
 
     <td>{{ employee.age }}</td>
-    <!-- <td>
-    <span>{{ user.number }}</span>
-  </td> -->
 
     <td>
       <button class="secondary-button" (click)="deleteEmployee(employee)">
@@ -65,6 +66,8 @@
       >
         Update
       </button>
+
+      <!-- POPUP -->
 
       <div class="overlay" *ngIf="popup">
         <div class="popup">
@@ -96,13 +99,9 @@
         </div>
       </div>
     </td>
-    <!-- <td>
-      <button class="secondary-button" (click)="update(employee)">
-        Update User
-      </button>
-    </td> -->
   </tr>
 </table>
+
 <pagination-controls
   class="center"
   (pageChange)="p = $event"
