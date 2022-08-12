@@ -80,9 +80,13 @@ export class EmployeeFormComponent implements OnInit {
   // VERSION 2
 
   employeeObj: EmployeeObj = new EmployeeObj();
+
   employees: any;
 
   addEmployee() {
+    if ('id' in this.employeeObj) {
+      delete this.employeeObj.id;
+    }
     this.employeeObj.name = this.formGroup.value.name;
     this.employeeObj.salary = this.formGroup.value.salary;
     this.employeeObj.age = this.formGroup.value.age;
@@ -124,10 +128,10 @@ export class EmployeeFormComponent implements OnInit {
     this.empService
       .update(this.employeeObj, this.employeeObj.id)
       .subscribe((res) => {
-        // let ref = document.getElementById('cancel');
-        // ref?.click();
         this.formGroup.reset();
         this.getEmployees();
+        this.popup = false;
+        console.log(this.employeeObj);
       });
   }
 }

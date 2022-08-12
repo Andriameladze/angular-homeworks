@@ -1,34 +1,3 @@
 {
-  "employees": [
-    {
-      "id": 3,
-      "name": "Andria Meladze",
-      "salary": 1221,
-      "age": 32135511
-    },
-    {
-      "id": 4,
-      "name": "Andria Meladze",
-      "salary": 121,
-      "age": 3213
-    },
-    {
-      "id": 5,
-      "name": "Andria Meladze",
-      "salary": 121555,
-      "age": 3213
-    },
-    {
-      "id": 6,
-      "name": "Andria Meladze",
-      "salary": 12155522,
-      "age": 555011
-    },
-    {
-      "id": 7,
-      "name": "giorgi11",
-      "salary": 11,
-      "age": 11
-    }
-  ]
+  "employees": []
 }

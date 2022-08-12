@@ -48,12 +48,16 @@
 
     <td>
       <button class="secondary-button" (click)="deleteEmployee(employee)">
-        Delete user
+        Delete
       </button>
     </td>
 
     <td>
-      <button type="button" (click)="popup = true; updateEmployee(employee)">
+      <button
+        type="button"
+        class="secondary-button"
+        (click)="popup = true; updateEmployee(employee)"
+      >
         Update
       </button>
 
@@ -80,7 +84,7 @@
 
             <br />
 
-            <button [disabled]="formGroup.invalid" (click)="updateDetails()">
+            <button class="secondary-button" (click)="updateDetails()">
               Update
             </button>
           </form>
