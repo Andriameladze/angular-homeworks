@@ -1,10 +1,36 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginListComponent } from './login-list/login-list.component';
+import { LoginUserComponent } from './login-user/login-user.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'signup',
+    component: LoginFormComponent,
+  },
+  {
+    path: 'login',
+    component: LoginUserComponent,
+  },
+  {
+    path: 'employees',
+    component: EmployeeFormComponent,
+  },
+  {
+    path: 'users',
+    component: LoginListComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

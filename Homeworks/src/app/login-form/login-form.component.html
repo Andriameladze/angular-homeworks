@@ -1,4 +1,5 @@
-<form [formGroup]="formGroup" class="center">
+<form [formGroup]="formGroup" class="center" (ngSubmit)="signUp()">
+  <h1>Please Sign Up</h1>
   <label for="email"><span>*</span> Email: </label>
 
   <input type="email" formControlName="email" />
@@ -22,6 +23,10 @@
   <input id="number" formControlName="number" />
 
   <br />
+  <label for="salary"><span>*</span> Salary: </label>
+  <input type="number" id="salary" formControlName="salary" />
+
+  <br />
   <label for="website"><span>*</span> Website: </label>
   <input id="website" formControlName="website" />
 
@@ -36,9 +41,12 @@
 
   <br />
 
-  <button [disabled]="buttoner && formGroup.invalid" (click)="onClick()">
-    Submit
+  <button [disabled]="buttoner && formGroup.invalid" type="submit">
+    Register
   </button>
+
+  <p>If you already have an account, please</p>
+  <a routerLink="/login">Log In</a>
 </form>
 
 <table>
@@ -48,6 +56,7 @@
     <th>Password</th>
     <th>Nickname</th>
     <th>Phone Number</th>
+    <th>Salary</th>
     <th>Website</th>
     <th>Remove User</th>
     <th>Update User</th>
@@ -67,6 +76,9 @@
     </td>
     <td>
       <span>{{ user.number }}</span>
+    </td>
+    <td>
+      <span>{{ user.salary }}</span>
     </td>
     <td>
       <span>{{ user.website }}</span>

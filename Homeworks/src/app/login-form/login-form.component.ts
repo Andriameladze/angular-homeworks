@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-login-form',
@@ -7,14 +10,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
-  formGroup = new FormGroup<any>('');
+  public formGroup = new FormGroup<any>('');
 
   urlValidator = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
   nicknameValidator = '^[a-zA-Z0-9_.-]*$';
   passwordRegex = '^[a-zA-Z0-9_]*$';
   numRegex = '^[+][0-9]{12}$';
 
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private api: ApiService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -44,12 +51,36 @@ export class LoginFormComponent implements OnInit {
         Validators.pattern(this.urlValidator),
       ]),
       checkbox: new FormControl('', Validators.requiredTrue),
+      salary: new FormControl('', [Validators.required]),
     });
   }
 
   users: any = [];
 
   buttoner = true;
+
+  userObj: any = new Object();
+
+  public signUp() {
+    // this.api.postMethod(this.formGroup.value).subscribe((res) => {
+    //   alert('Signup Successful');
+    //   this.formGroup.reset();
+    //   this.router.navigate(['login']);
+    // });
+
+    this.userObj.email = this.formGroup.value.email;
+    this.userObj.nickname = this.formGroup.value.nickname;
+    this.userObj.website = this.formGroup.value.website;
+    this.userObj.phone = this.formGroup.value.number;
+    this.userObj.password = this.formGroup.value.password;
+    this.userObj.salary = this.formGroup.value.salary;
+
+    this.api.postMethod(this.userObj).subscribe((res) => {
+      this.formGroup.reset();
+      alert('You have successfully registered!');
+      this.router.navigate(['login']);
+    });
+  }
 
   public onClick(): void {
     const pass = this.formGroup?.get('password')?.value;
@@ -88,6 +119,7 @@ export class LoginFormComponent implements OnInit {
       this.buttoner = true;
     }
   }
+
   public removeItem(element: any) {
     this.users.forEach((value: string, index: number) => {
       if (value == element) {
@@ -101,6 +133,7 @@ export class LoginFormComponent implements OnInit {
       }
     });
   }
+
   public update(element: any) {
     let updateUser = [];
     this.users.forEach((value: string, index: number) => {
@@ -114,6 +147,7 @@ export class LoginFormComponent implements OnInit {
           nickname: updateUser[0].nickname,
           number: updateUser[0].number,
           website: updateUser[0].website,
+          salary: updateUser[0].salary,
           checkbox: '',
         });
       }

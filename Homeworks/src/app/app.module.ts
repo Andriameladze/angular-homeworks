@@ -9,6 +9,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpComponent } from './http/http.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginUserComponent } from './login-user/login-user.component';
+import { LoginListComponent } from './login-list/login-list.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LoginFormComponent,
     HttpComponent,
     EmployeeFormComponent,
+    LoginUserComponent,
+    LoginListComponent,
   ],
   imports: [
     BrowserModule,

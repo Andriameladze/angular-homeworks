@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "andriameladze@gmail.com",
+      "nickname": "Super",
+      "website": "google.com",
+      "phone": "+995598839052",
+      "password": "leonardo",
+      "salary": 1100,
+      "id": 1
+    }
+  ],
+  "employees": []
+}

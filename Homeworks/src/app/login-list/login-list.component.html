@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Nickname</th>
+    <th>Phone Number</th>
+    <th>Salary</th>
+    <th>Website</th>
+    <th>Remove User</th>
+    <th>Update User</th>
+  </tr>
+  <tr *ngFor="let user of users; let index = index">
+    <td>
+      <span>{{ user.id }}</span>
+    </td>
+    <td>
+      <span>{{ user.email }}</span>
+    </td>
+    <td>
+      <span>{{ user.password }}</span>
+    </td>
+    <td>
+      <span>{{ user.nickname }}</span>
+    </td>
+    <td>
+      <span>{{ user.phone }}</span>
+    </td>
+    <td>
+      <span>{{ user.salary }}</span>
+    </td>
+    <td>
+      <span>{{ user.website }}</span>
+    </td>
+    <!-- <td><button (click)="removeItem(user)">Remove user</button></td>
+    <td><button (click)="update(user)">Update User</button></td> -->
+  </tr>
+</table>
