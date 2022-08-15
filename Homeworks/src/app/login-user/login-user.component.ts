@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../login-form/api.service';
+import { LoginAuthService } from './login-auth.service';
 
 @Component({
   selector: 'app-login-user',
@@ -11,7 +12,11 @@ import { ApiService } from '../login-form/api.service';
 export class LoginUserComponent implements OnInit {
   formGroup = new FormGroup<any>('');
 
-  constructor(private api: ApiService, private router: Router) {}
+  constructor(
+    private api: ApiService,
+    private router: Router,
+    private loginAuth: LoginAuthService
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -31,6 +36,8 @@ export class LoginUserComponent implements OnInit {
       if (user) {
         alert('Login Successful!');
         this.formGroup.reset();
+        this.loginAuth.isLoggedIn = true;
+        this.loginAuth.setUserInfo = this.formGroup.value;
         this.router.navigate(['users']);
       } else {
         alert('user not found!');

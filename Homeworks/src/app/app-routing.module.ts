@@ -1,6 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { LoginAccessGuard } from './guards/login-access.guard';
+import { LoginGuard } from './guards/login.guard';
+import { HttpComponent } from './http/http.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginListComponent } from './login-list/login-list.component';
 import { LoginUserComponent } from './login-user/login-user.component';
@@ -18,6 +21,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginUserComponent,
+    canActivate: [LoginAccessGuard],
   },
   {
     path: 'employees',
@@ -26,6 +30,11 @@ const routes: Routes = [
   {
     path: 'users',
     component: LoginListComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'currency',
+    component: HttpComponent,
   },
 ];
 

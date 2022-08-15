@@ -1,0 +1,19 @@
+<nav>
+  <div class="left">
+    <a routerLink="/employees">Employees</a>
+    <a routerLink="/currency">Currency</a>
+    <ng-container *ngIf="checkLogin()">
+      <a routerLink="/users">Users</a>
+    </ng-container>
+  </div>
+
+  <div class="right">
+    <ng-container *ngIf="!checkLogin()">
+      <a routerLink="/login">Log In</a>
+    </ng-container>
+
+    <ng-container *ngIf="checkLogin()">
+      <a>Log Out</a>
+    </ng-container>
+  </div>
+</nav>

@@ -8,6 +8,15 @@
       "password": "leonardo",
       "salary": 1100,
       "id": 1
+    },
+    {
+      "email": "andriamela@gmail.com",
+      "nickname": "andriam",
+      "website": "google.com",
+      "phone": "+995598839052",
+      "password": "leonardo",
+      "salary": 1100,
+      "id": 2
     }
   ],
   "employees": []

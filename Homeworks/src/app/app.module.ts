@@ -11,6 +11,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginListComponent } from './login-list/login-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LoginListComponent } from './login-list/login-list.component';
     EmployeeFormComponent,
     LoginUserComponent,
     LoginListComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
