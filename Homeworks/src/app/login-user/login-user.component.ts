@@ -35,12 +35,27 @@ export class LoginUserComponent implements OnInit {
       });
       if (user) {
         alert('Login Successful!');
+        this.checkCurrency();
         this.formGroup.reset();
         this.loginAuth.isLoggedIn = true;
         this.loginAuth.setUserInfo = this.formGroup.value;
         this.router.navigate(['users']);
       } else {
         alert('user not found!');
+      }
+    });
+  }
+
+  checkCurrency() {
+    let email = this.formGroup.value.email;
+
+    this.api.getMethod().subscribe((res): void => {
+      const index = res.findIndex(function (arg: any) {
+        return arg.email === email;
+      });
+
+      if (res[index]['salary'] > 400) {
+        this.loginAuth.currencyCheck = true;
       }
     });
   }

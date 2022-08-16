@@ -1,7 +1,10 @@
 <nav>
   <div class="left">
     <a routerLink="/employees">Employees</a>
-    <a routerLink="/currency">Currency</a>
+    <ng-container *ngIf="checkCurrency()">
+      <a routerLink="/currency">Currency</a>
+    </ng-container>
+
     <ng-container *ngIf="checkLogin()">
       <a routerLink="/users">Users</a>
     </ng-container>
@@ -13,7 +16,7 @@
     </ng-container>
 
     <ng-container *ngIf="checkLogin()">
-      <a>Log Out</a>
+      <a (click)="logOut()" routerLink="/login">Log Out</a>
     </ng-container>
   </div>
 </nav>

@@ -7,6 +7,8 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class LoginAuthService {
   public userId: any;
 
+  public currencyCheck = false;
+
   public isLoggedIn = false;
 
   public userInfo: BehaviorSubject<any> = new BehaviorSubject({
