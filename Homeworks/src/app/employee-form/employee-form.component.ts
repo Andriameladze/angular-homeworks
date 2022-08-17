@@ -64,7 +64,7 @@ export class EmployeeFormComponent implements OnInit {
     });
   }
 
-  deleteEmployee(employee: any) {
+  deleteEmployee(employee: EmployeeObj) {
     this.empService.delete(employee.id).subscribe((res) => {
       alert('You have successfully deleted an employee!');
       this.getEmployees();
@@ -73,7 +73,7 @@ export class EmployeeFormComponent implements OnInit {
 
   popup = false;
 
-  updateEmployee(employee: any) {
+  updateEmployee(employee: EmployeeObj) {
     this.employeeObj.id = employee.id;
     this.formGroup.controls['name'].setValue(employee.name);
     this.formGroup.controls['salary'].setValue(employee.salary);

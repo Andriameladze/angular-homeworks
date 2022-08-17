@@ -82,19 +82,19 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  public onClick(): void {
-    const pass = this.formGroup?.get('password')?.value;
-    const conf = this.formGroup?.get('confirm')?.value;
-    console.log(this.formGroup);
-    if (this.formGroup.valid && pass == conf && pass.length > 7) {
-      this.users.push(this.formGroup.value);
-      this.formGroup.reset();
-      this.buttoner = true;
-      console.log(pass);
-    } else {
-      alert('You must fill inputs correctly!');
-    }
-  }
+  // public onClick(): void {
+  //   const pass = this.formGroup?.get('password')?.value;
+  //   const conf = this.formGroup?.get('confirm')?.value;
+  //   console.log(this.formGroup);
+  //   if (this.formGroup.valid && pass == conf && pass.length > 7) {
+  //     this.users.push(this.formGroup.value);
+  //     this.formGroup.reset();
+  //     this.buttoner = true;
+  //     console.log(pass);
+  //   } else {
+  //     alert('You must fill inputs correctly!');
+  //   }
+  // }
 
   public checkbox(e: any): void {
     const pass = this.formGroup?.get('password')?.value;
@@ -120,38 +120,38 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
-  public removeItem(element: any) {
-    this.users.forEach((value: string, index: number) => {
-      if (value == element) {
-        if (
-          window.confirm(
-            `Are you sure you want to delete user with email: ${element.email} ?`
-          )
-        ) {
-          this.users.splice(index, 1);
-        }
-      }
-    });
-  }
+  // public removeItem(element: any) {
+  //   this.users.forEach((value: string, index: number) => {
+  //     if (value == element) {
+  //       if (
+  //         window.confirm(
+  //           `Are you sure you want to delete user with email: ${element.email} ?`
+  //         )
+  //       ) {
+  //         this.users.splice(index, 1);
+  //       }
+  //     }
+  //   });
+  // }
 
-  public update(element: any) {
-    let updateUser = [];
-    this.users.forEach((value: string, index: number) => {
-      if (value == element) {
-        updateUser = this.users.splice(index, 1);
-        console.log(updateUser);
-        this.formGroup.setValue({
-          email: updateUser[0].email,
-          password: updateUser[0].password,
-          confirm: updateUser[0].password,
-          nickname: updateUser[0].nickname,
-          number: updateUser[0].number,
-          website: updateUser[0].website,
-          salary: updateUser[0].salary,
-          checkbox: '',
-        });
-      }
-    });
-    this.buttoner = true;
-  }
+  // public update(element: any) {
+  //   let updateUser = [];
+  //   this.users.forEach((value: string, index: number) => {
+  //     if (value == element) {
+  //       updateUser = this.users.splice(index, 1);
+  //       console.log(updateUser);
+  //       this.formGroup.setValue({
+  //         email: updateUser[0].email,
+  //         password: updateUser[0].password,
+  //         confirm: updateUser[0].password,
+  //         nickname: updateUser[0].nickname,
+  //         number: updateUser[0].number,
+  //         website: updateUser[0].website,
+  //         salary: updateUser[0].salary,
+  //         checkbox: '',
+  //       });
+  //     }
+  //   });
+  //   this.buttoner = true;
+  // }
 }
