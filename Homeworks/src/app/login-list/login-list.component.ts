@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginAuthService } from '../login-user/login-auth.service';
 import { ListApiService } from './list-api.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { ListApiService } from './list-api.service';
   styleUrls: ['./login-list.component.scss'],
 })
 export class LoginListComponent implements OnInit {
-  constructor(private api: ListApiService) {}
+  constructor(
+    private api: ListApiService,
+    private loginAuth: LoginAuthService
+  ) {}
 
   public formGroup = new FormGroup<any>('');
 
@@ -122,5 +126,13 @@ export class LoginListComponent implements OnInit {
       alert('You have successfully deleted a user!');
       this.getUsers();
     });
+  }
+
+  editDeleteCheck(user: any) {
+    if (user.id == this.loginAuth.idCheck) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

@@ -11,6 +11,8 @@ export class LoginAuthService {
 
   public isLoggedIn = false;
 
+  public idCheck: any;
+
   public userInfo: BehaviorSubject<any> = new BehaviorSubject({
     emai: '',
     password: '',

@@ -1,4 +1,30 @@
 {
-  "users": [],
-  "employees": []
+  "users": [
+    {
+      "email": "gio@gmail.com",
+      "nickname": "andria",
+      "website": "google.com",
+      "phone": "+995598839052",
+      "password": "leonardo",
+      "salary": 1500,
+      "id": 2
+    },
+    {
+      "email": "andria@gmail.com",
+      "nickname": "andria",
+      "website": "google.com",
+      "phone": "+995598839052",
+      "password": "leonardo",
+      "salary": 1500,
+      "id": 3
+    }
+  ],
+  "employees": [
+    {
+      "name": "Andria Meladze",
+      "salary": 10000,
+      "age": 23,
+      "id": 1
+    }
+  ]
 }

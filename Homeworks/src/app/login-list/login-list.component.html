@@ -33,11 +33,16 @@
       <span>{{ user.website }}</span>
     </td>
 
-    <td><button (click)="deleteUser(user)">Remove</button></td>
+    <td>
+      <button [disabled]="!editDeleteCheck(user)" (click)="deleteUser(user)">
+        Remove
+      </button>
+    </td>
     <td>
       <button
         type="button"
         class="secondary-button"
+        [disabled]="!editDeleteCheck(user)"
         (click)="popup = true; updateUser(user)"
       >
         Update

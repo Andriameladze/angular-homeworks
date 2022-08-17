@@ -36,6 +36,7 @@ export class LoginUserComponent implements OnInit {
       if (user) {
         alert('Login Successful!');
         this.checkCurrency();
+        this.checkEdit();
         this.formGroup.reset();
         this.loginAuth.isLoggedIn = true;
         this.loginAuth.setUserInfo = this.formGroup.value;
@@ -57,6 +58,18 @@ export class LoginUserComponent implements OnInit {
       if (res[index]['salary'] > 400) {
         this.loginAuth.currencyCheck = true;
       }
+    });
+  }
+
+  checkEdit() {
+    let email = this.formGroup.value.email;
+
+    this.api.getMethod().subscribe((res): void => {
+      const index = res.findIndex(function (arg: any) {
+        return arg.email === email;
+      });
+
+      this.loginAuth.idCheck = res[index]['id'];
     });
   }
 }
