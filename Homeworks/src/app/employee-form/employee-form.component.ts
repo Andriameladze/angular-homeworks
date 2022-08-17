@@ -71,7 +71,7 @@ export class EmployeeFormComponent implements OnInit {
     });
   }
 
-  popup = false;
+  public popup = false;
 
   updateEmployee(employee: EmployeeObj) {
     this.employeeObj.id = employee.id;

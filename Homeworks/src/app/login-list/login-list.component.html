@@ -7,8 +7,8 @@
     <th>Phone Number</th>
     <th>Salary</th>
     <th>Website</th>
-    <th>Remove User</th>
     <th>Update User</th>
+    <th>Remove User</th>
   </tr>
   <tr *ngFor="let user of users; let index = index">
     <td>
@@ -32,7 +32,86 @@
     <td>
       <span>{{ user.website }}</span>
     </td>
-    <!-- <td><button (click)="removeItem(user)">Remove user</button></td>
-    <td><button (click)="update(user)">Update User</button></td> -->
+
+    <td><button (click)="deleteUser(user)">Remove</button></td>
+    <td>
+      <button
+        type="button"
+        class="secondary-button"
+        (click)="popup = true; updateUser(user)"
+      >
+        Update
+      </button>
+
+      <!-- POPUP -->
+
+      <div class="overlay" *ngIf="popup">
+        <div class="popup">
+          <h2>Update User</h2>
+          <a class="close" (click)="popup = false">&times;</a>
+          <form [formGroup]="formGroup" class="center">
+            <label for="email"><span>*</span>Email: </label>
+
+            <input formControlName="email" id="email" />
+
+            <br />
+
+            <label for="password"><span>*</span>Password: </label>
+
+            <input type="password" formControlName="password" id="password" />
+
+            <br />
+
+            <label for="confirm"> <span>*</span>Confirm Password: </label>
+
+            <input type="password" formControlName="confirm" id="confirm" />
+
+            <br />
+
+            <label for="nickname"> <span>*</span>Nickname </label>
+
+            <input type="text" formControlName="nickname" id="nickname" />
+
+            <br />
+
+            <label for="number"> <span>*</span>Phone Number: </label>
+
+            <input type="text" formControlName="number" id="number" />
+
+            <br />
+
+            <label for="website"> <span>*</span>Website: </label>
+
+            <input type="text" formControlName="website" id="website" />
+
+            <br />
+
+            <label for="salary"> <span>*</span>Salary: </label>
+
+            <input type="number" formControlName="salary" id="salary" />
+
+            <br />
+
+            <input
+              type="checkbox"
+              (change)="checkbox($event)"
+              formControlName="checkbox"
+            />
+            I have read the agreement
+
+            <br />
+
+            <button
+              [disabled]="buttoner && formGroup.invalid"
+              type="submit"
+              class="secondary-button"
+              (click)="updateDetails()"
+            >
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </td>
   </tr>
 </table>

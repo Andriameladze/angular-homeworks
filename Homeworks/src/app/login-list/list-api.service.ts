@@ -17,4 +17,20 @@ export class ListApiService {
       })
     );
   }
+
+  update(data: any, id: number) {
+    return this.http.put(this.usersUrl + '/' + id, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  delete(id: number) {
+    return this.http.delete(this.usersUrl + '/' + id).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
