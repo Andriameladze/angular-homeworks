@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CurrencyGuard } from './core/guards/currency.guard';
 import { LoginAccessGuard } from './core/guards/login-access.guard';
 import { LoginGuard } from './core/guards/login.guard';
-import { LoginUserComponent } from './login-user/login-user.component';
 
 const routes: Routes = [
   {
@@ -20,8 +19,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginUserComponent,
-    canActivate: [LoginAccessGuard],
+    loadChildren: () =>
+      import('./features/login-user/login-user.module').then(
+        (m) => m.LoginUserModule
+      ),
+    canLoad: [LoginAccessGuard],
   },
   {
     path: 'employees',
