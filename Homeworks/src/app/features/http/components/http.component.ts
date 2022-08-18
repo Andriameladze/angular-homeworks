@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CurrencyapiService } from './currencyapi.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { AnimateTimings } from '@angular/animations';
+import { CurrencyapiService } from '../services/currencyapi.service';
 
 @Component({
   selector: 'app-http',
