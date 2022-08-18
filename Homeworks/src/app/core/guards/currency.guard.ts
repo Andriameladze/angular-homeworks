@@ -7,13 +7,13 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LoginAuthService } from '../login-user/login-auth.service';
+import { LoginAuthService } from 'src/app/login-user/login-auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginGuard implements CanActivate {
-  constructor(private loginService: LoginAuthService, private router: Router) {}
+export class CurrencyGuard implements CanActivate {
+  constructor(private loginAuth: LoginAuthService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -23,10 +23,9 @@ export class LoginGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.loginService.loggedIn()) {
+    if (this.loginAuth.currency()) {
       return true;
     } else {
-      this.router.navigate(['/login']);
       return false;
     }
   }

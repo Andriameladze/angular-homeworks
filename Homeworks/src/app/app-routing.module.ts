@@ -1,8 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CurrencyGuard } from './guards/currency.guard';
-import { LoginAccessGuard } from './guards/login-access.guard';
-import { LoginGuard } from './guards/login.guard';
+import { CurrencyGuard } from './core/guards/currency.guard';
+import { LoginAccessGuard } from './core/guards/login-access.guard';
+import { LoginGuard } from './core/guards/login.guard';
 import { HttpComponent } from './http/http.component';
 import { LoginListComponent } from './login-list/login-list.component';
 import { LoginUserComponent } from './login-user/login-user.component';
