@@ -31,4 +31,8 @@ export class LoginAuthService {
   public loggedIn() {
     return this.isLoggedIn;
   }
+
+  public currency() {
+    return this.currencyCheck;
+  }
 }

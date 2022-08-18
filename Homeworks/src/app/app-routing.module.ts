@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { CurrencyGuard } from './guards/currency.guard';
 import { LoginAccessGuard } from './guards/login-access.guard';
 import { LoginGuard } from './guards/login.guard';
 import { HttpComponent } from './http/http.component';
@@ -36,7 +37,7 @@ const routes: Routes = [
   {
     path: 'currency',
     component: HttpComponent,
-    canActivate: [LoginGuard],
+    canActivate: [LoginGuard, CurrencyGuard],
   },
 ];
 
