@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'employees',
-    component: EmployeeFormComponent,
+    loadChildren: () =>
+      import('./employee-form/employee.module').then((m) => m.EmployeeModule),
   },
   {
     path: 'users',
@@ -35,6 +36,7 @@ const routes: Routes = [
   {
     path: 'currency',
     component: HttpComponent,
+    canActivate: [LoginGuard],
   },
 ];
 

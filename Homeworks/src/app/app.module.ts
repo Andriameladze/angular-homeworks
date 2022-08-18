@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpComponent } from './http/http.component';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginListComponent } from './login-list/login-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,7 +16,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     LoginFormComponent,
     HttpComponent,
-    EmployeeFormComponent,
     LoginUserComponent,
     LoginListComponent,
     NavbarComponent,
@@ -29,7 +26,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
