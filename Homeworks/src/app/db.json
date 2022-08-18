@@ -8,13 +8,22 @@
       "phone": "+995598839052",
       "password": "leonardo",
       "salary": 3500
+    },
+    {
+      "email": "nika@gmail.com",
+      "nickname": "kaikaci",
+      "website": "google.com",
+      "phone": "+995598839052",
+      "password": "leonardo",
+      "salary": 1500,
+      "id": 4
     }
   ],
   "employees": [
     {
       "name": "Andria",
       "salary": 111000,
-      "age": 25,
+      "age": 20,
       "id": 2
     },
     {
@@ -22,6 +31,18 @@
       "salary": 1500,
       "age": 10,
       "id": 3
+    },
+    {
+      "name": "Andria Meladze",
+      "salary": 1500,
+      "age": 19,
+      "id": 4
+    },
+    {
+      "name": "Nika",
+      "salary": 1500,
+      "age": 20,
+      "id": 5
     }
   ]
 }

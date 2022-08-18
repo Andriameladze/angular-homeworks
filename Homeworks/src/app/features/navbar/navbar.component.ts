@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { LoginAuthService } from '../shared/services/login-auth.service';
-LoginAuthService;
+import { LoginAuthService } from 'src/app/shared/services/login-auth.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

@@ -44,7 +44,8 @@ const routes: Routes = [
     path: 'currency',
     loadChildren: () =>
       import('./features/http/currency.module').then((m) => m.CurrencyModule),
-    canLoad: [LoginGuard, CurrencyGuard],
+    canLoad: [LoginGuard],
+    canActivate: [CurrencyGuard],
   },
 ];
 
