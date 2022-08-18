@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
-import { EmpServiceService } from './emp-service.service';
+import { EmpServiceService } from '../services/emp-service.service';
 import { EmployeeObj } from './emp-obj.model';
 
 @Component({

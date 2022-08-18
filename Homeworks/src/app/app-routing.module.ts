@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { CurrencyGuard } from './guards/currency.guard';
 import { LoginAccessGuard } from './guards/login-access.guard';
 import { LoginGuard } from './guards/login.guard';
@@ -29,7 +28,9 @@ const routes: Routes = [
   {
     path: 'employees',
     loadChildren: () =>
-      import('./employee-form/employee.module').then((m) => m.EmployeeModule),
+      import('./features/employee-form/employee.module').then(
+        (m) => m.EmployeeModule
+      ),
   },
   {
     path: 'users',

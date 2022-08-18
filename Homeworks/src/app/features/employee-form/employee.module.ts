@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EmployeeFormComponent } from './employee-form.component';
+import { EmployeeFormComponent } from './components/employee-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EmployeeRoutingModule } from './employee-routing.module';
-
 
 @NgModule({
   declarations: [EmployeeFormComponent],
@@ -13,7 +12,7 @@ import { EmployeeRoutingModule } from './employee-routing.module';
     NgxPaginationModule,
     ReactiveFormsModule,
     FormsModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
   ],
 })
 export class EmployeeModule {}

@@ -3,7 +3,7 @@
     {
       "id": 3,
       "email": "andria@gmail.com",
-      "nickname": "andria",
+      "nickname": "an",
       "website": "google.com",
       "phone": "+995598839052",
       "password": "leonardo",
@@ -12,16 +12,16 @@
   ],
   "employees": [
     {
-      "name": "Andria Meladze",
-      "salary": 10000,
-      "age": 23,
-      "id": 1
-    },
-    {
       "name": "Andria",
       "salary": 111000,
       "age": 25,
       "id": 2
+    },
+    {
+      "name": "Giorgi",
+      "salary": 1500,
+      "age": 10,
+      "id": 3
     }
   ]
 }
