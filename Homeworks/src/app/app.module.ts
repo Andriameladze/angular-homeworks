@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpComponent } from './http/http.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginListComponent } from './login-list/login-list.component';
@@ -14,7 +13,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
     HttpComponent,
     LoginUserComponent,
     LoginListComponent,

@@ -5,7 +5,6 @@ import { CurrencyGuard } from './guards/currency.guard';
 import { LoginAccessGuard } from './guards/login-access.guard';
 import { LoginGuard } from './guards/login.guard';
 import { HttpComponent } from './http/http.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginListComponent } from './login-list/login-list.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 
@@ -17,7 +16,10 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    component: LoginFormComponent,
+    loadChildren: () =>
+      import('./features/login-form/login-form.module').then(
+        (m) => m.LoginFormModule
+      ),
   },
   {
     path: 'login',
