@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginAuthService } from '../login-user/login-auth.service';
-import { ListApiService } from './list-api.service';
+import { LoginAuthService } from 'src/app/shared/services/login-auth.service';
+import { ListApiService } from '../services/list-api.service';
+
 
 @Component({
   selector: 'app-login-list',
