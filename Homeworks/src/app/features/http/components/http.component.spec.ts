@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CurrencyapiService } from '../services/currencyapi.service';
 
 import { HttpComponent } from './http.component';
 
@@ -8,9 +10,10 @@ describe('HttpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HttpComponent ]
-    })
-    .compileComponents();
+      declarations: [HttpComponent],
+      providers: [CurrencyapiService],
+      imports: [HttpClientModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HttpComponent);
     component = fixture.componentInstance;

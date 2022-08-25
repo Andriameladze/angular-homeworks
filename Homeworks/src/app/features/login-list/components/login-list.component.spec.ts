@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginListComponent } from './login-list.component';
@@ -8,9 +9,9 @@ describe('LoginListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginListComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginListComponent],
+      imports: [HttpClientModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LoginListComponent);
     component = fixture.componentInstance;
